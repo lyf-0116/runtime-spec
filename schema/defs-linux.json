@@ -138,6 +138,25 @@
             "required": [
                 "names",
                 "action"
+            ],
+            "anyOf": [
+                {
+                    "not": {
+                        "required": [
+                            "errnoRet"
+                        ]
+                    }
+                },
+                {
+                    "properties": {
+                        "action": {
+                            "enum": [
+                                "SCMP_ACT_ERRNO",
+                                "SCMP_ACT_TRACE"
+                            ]
+                        }
+                    }
+                }
             ]
         },
         "Major": {

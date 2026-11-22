@@ -248,6 +248,45 @@
                 },
                 "required": [
                     "defaultAction"
+                ],
+                "allOf": [
+                    {
+                        "anyOf": [
+                            {
+                                "not": {
+                                    "required": [
+                                        "defaultErrnoRet"
+                                    ]
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "defaultAction": {
+                                        "enum": [
+                                            "SCMP_ACT_ERRNO",
+                                            "SCMP_ACT_TRACE"
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "anyOf": [
+                            {
+                                "not": {
+                                    "required": [
+                                        "listenerMetadata"
+                                    ]
+                                }
+                            },
+                            {
+                                "required": [
+                                    "listenerPath"
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             "sysctl": {

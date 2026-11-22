@@ -1,0 +1,32 @@
+{
+    "ociVersion": "1.0.0",
+    "root": {
+        "path": "rootfs"
+    },
+    "linux": {
+        "seccomp": {
+            "defaultAction": "SCMP_ACT_ERRNO",
+            "defaultErrnoRet": 1,
+            "listenerPath": "/run/seccomp/agent.sock",
+            "listenerMetadata": "opaque-metadata",
+            "architectures": [
+                "SCMP_ARCH_X86_64"
+            ],
+            "syscalls": [
+                {
+                    "names": [
+                        "getcwd"
+                    ],
+                    "action": "SCMP_ACT_TRACE",
+                    "errnoRet": 1
+                },
+                {
+                    "names": [
+                        "chmod"
+                    ],
+                    "action": "SCMP_ACT_ALLOW"
+                }
+            ]
+        }
+    }
+}

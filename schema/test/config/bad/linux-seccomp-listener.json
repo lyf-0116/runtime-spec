@@ -1,0 +1,12 @@
+{
+    "ociVersion": "1.0.0",
+    "root": {
+        "path": "rootfs"
+    },
+    "linux": {
+        "seccomp": {
+            "defaultAction": "SCMP_ACT_ALLOW",
+            "listenerMetadata": "opaque-metadata"
+        }
+    }
+}
