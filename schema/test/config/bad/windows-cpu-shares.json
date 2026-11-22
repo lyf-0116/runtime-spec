@@ -1,0 +1,13 @@
+{
+    "ociVersion": "1.0.0",
+    "windows": {
+        "layerFolders": [
+            "C:\\\\Layers\\\\layer1"
+        ],
+        "resources": {
+            "cpu": {
+                "shares": 10001
+            }
+        }
+    }
+}

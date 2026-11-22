@@ -192,7 +192,14 @@
             }
         },
         "weight": {
-            "$ref": "defs.json#/definitions/uint16"
+            "allOf": [
+                {
+                    "$ref": "defs.json#/definitions/uint16"
+                },
+                {
+                    "minimum": 10
+                }
+            ]
         },
         "blockIODevice": {
             "type": "object",

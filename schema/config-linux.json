@@ -53,7 +53,14 @@
                         "type": "object",
                         "properties": {
                             "limit": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             }
                         },
                         "required": [
@@ -114,7 +121,14 @@
                                 "$ref": "defs.json#/definitions/uint64"
                             },
                             "quota": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "burst": {
                                 "$ref": "defs.json#/definitions/uint64"
@@ -123,7 +137,14 @@
                                 "$ref": "defs.json#/definitions/uint64"
                             },
                             "realtimeRuntime": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "shares": {
                                 "$ref": "defs.json#/definitions/uint64"
@@ -156,22 +177,57 @@
                         "type": "object",
                         "properties": {
                             "kernel": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "kernelTCP": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "limit": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "reservation": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "swap": {
-                                "$ref": "defs.json#/definitions/int64"
+                                "allOf": [
+                                    {
+                                        "$ref": "defs.json#/definitions/int64"
+                                    },
+                                    {
+                                        "minimum": -1
+                                    }
+                                ]
                             },
                             "swappiness": {
-                                "$ref": "defs.json#/definitions/uint64"
+                                "$ref": "defs.json#/definitions/percent"
                             },
                             "disableOOMKiller": {
                                 "type": "boolean"

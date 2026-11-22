@@ -1,0 +1,17 @@
+{
+    "ociVersion": "1.0.0",
+    "windows": {
+        "layerFolders": [
+            "C:\\\\Layers\\\\layer1"
+        ],
+        "resources": {
+            "memory": {
+                "limit": -1
+            },
+            "cpu": {
+                "shares": 10000,
+                "maximum": 5000
+            }
+        }
+    }
+}
