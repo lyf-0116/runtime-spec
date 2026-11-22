@@ -166,6 +166,12 @@ If a custom option string is already recognized by [`mount(8)`][mount.8], the ru
 Runtimes SHOULD treat unknown options as [filesystem-specific ones][mount.8-filesystem-specific])
 and pass those as a comma-separated string to the fifth (`const void *data`) argument of [`mount(2)`][mount.2].
 
+For Linux, the following option combinations are invalid and a runtime [generating an error](runtime.md#errors) on them is not a violation of the requirement to accept unknown option strings:
+
+* A mount's `options` MUST NOT contain more than one propagation option (`private`, `shared`, `slave`, `unbindable`, `rprivate`, `rshared`, `rslave`, `runbindable`).
+* A mount's `options` MUST NOT mix read-only options (`ro`, `rro`) with read-write options (`rw`, `rrw`).
+* When [`root.readonly`](#root) is true, a mount's `options` MUST NOT contain a read-write option (`rw`, `rrw`).
+
 ### Example (Windows)
 
 ```json

@@ -1,0 +1,20 @@
+{
+    "ociVersion": "1.1.0",
+    "root": {
+        "path": "rootfs"
+    },
+    "linux": {
+        "namespaces": []
+    },
+    "mounts": [
+        {
+            "destination": "/shared",
+            "source": "/host/shared",
+            "options": [
+                "bind",
+                "shared",
+                "slave"
+            ]
+        }
+    ]
+}

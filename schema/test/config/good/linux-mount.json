@@ -1,0 +1,32 @@
+{
+    "ociVersion": "1.1.0",
+    "root": {
+        "path": "rootfs",
+        "readonly": true
+    },
+    "linux": {
+        "namespaces": [],
+        "rootfsPropagation": "rshared"
+    },
+    "mounts": [
+        {
+            "destination": "/bind",
+            "source": "relative-source",
+            "options": [
+                "rbind",
+                "rprivate",
+                "ro"
+            ]
+        },
+        {
+            "destination": "/tmp",
+            "source": "tmpfs",
+            "type": "tmpfs",
+            "options": [
+                "nosuid",
+                "mode=1777",
+                "size=65536k"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "ociVersion": "1.1.0",
+    "root": {
+        "path": "rootfs",
+        "readonly": true
+    },
+    "linux": {
+        "namespaces": []
+    },
+    "mounts": [
+        {
+            "destination": "/writable",
+            "source": "/host/writable",
+            "options": [
+                "bind",
+                "rw"
+            ]
+        }
+    ]
+}

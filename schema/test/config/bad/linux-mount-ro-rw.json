@@ -1,0 +1,19 @@
+{
+    "ociVersion": "1.1.0",
+    "root": {
+        "path": "rootfs"
+    },
+    "linux": {
+        "namespaces": []
+    },
+    "mounts": [
+        {
+            "destination": "/data",
+            "source": "/host/data",
+            "options": [
+                "ro",
+                "rw"
+            ]
+        }
+    ]
+}

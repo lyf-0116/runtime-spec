@@ -1039,7 +1039,8 @@ Example sending a single `seccompFd` file descriptor in the `SCM_RIGHTS` array:
 ## <a name="configLinuxRootfsMountPropagation" />Rootfs Mount Propagation
 
 **`rootfsPropagation`** (string, OPTIONAL) sets the rootfs's mount propagation.
-Its value is either `shared`, `slave`, `private` or `unbindable`.
+Its value is one of `shared`, `slave`, `private`, `unbindable`, `rshared`, `rslave`, `rprivate` or `runbindable`.
+The `r`-prefixed values request the corresponding propagation mode recursively and use the same vocabulary as the propagation words accepted in [mount options](#configLinuxMountOptions).
 It's worth noting that a peer group is defined as a group of VFS mounts that propagate events to each other.
 A nested container is defined as a container launched inside an existing container.
 
@@ -1049,6 +1050,7 @@ A nested container is defined as a container launched inside an existing contain
 * **`slave`**: the rootfs mount receives propagation events from the host (e.g. if something is mounted on the host it will also appear in the container) but not the other way around.
 * **`private`**: the rootfs mount doesn't receive mount propagation events from the host and further mounts in nested containers will be isolated from the host and from the rootfs (even if the nested container `rootfsPropagation` option is shared).
 * **`unbindable`**: the rootfs mount is a private mount that cannot be bind-mounted.
+* **`rshared`**, **`rslave`**, **`rprivate`** and **`runbindable`**: recursive variants of the modes above, applied to the rootfs and all of its submounts.
 
 The [Shared Subtrees][sharedsubtree] article in the kernel documentation has more information about mount propagation.
 
